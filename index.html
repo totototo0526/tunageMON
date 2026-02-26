@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>つなげモン シリーズ ドキュメント一覧</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-800 bg-slate-50 min-h-screen hero-pattern">
+
+    <!-- ヘッダー -->
+    <header class="bg-white/90 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex items-center gap-3">
+            <i data-lucide="network" class="w-8 h-8 text-orange-500"></i>
+            <h1 class="text-2xl font-black tracking-tight text-slate-800">つなげモン<span
+                    class="text-sm font-bold text-slate-500 ml-2">ドキュメント一覧</span></h1>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <p
+                class="inline-block bg-orange-100 text-orange-700 font-bold px-4 py-1.5 rounded-full mb-4 tracking-widest text-sm border border-orange-200">
+                〜 チーム共有用インデックス 〜
+            </p>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-slate-800 mb-4 tracking-tight">作成済みページ一覧</h2>
+            <p class="text-slate-600 font-medium">各業務・用途に応じた「つなげモン」の提案資料やランディングページを確認できます。</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- LP.html カード -->
+            <a href="LP.html"
+                class="card-hover bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden group block">
+                <div
+                    class="h-32 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center relative">
+                    <div class="absolute inset-0 opacity-20"
+                        style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 16px 16px;">
+                    </div>
+                    <i data-lucide="layout-template" class="w-16 h-16 text-white opacity-90 drop-shadow-md"></i>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-red-100 text-red-700 font-bold rounded-md text-xs">顧客向け</span>
+                        <h3 class="text-2xl font-black text-slate-800 group-hover:text-orange-600 transition-colors">
+                            ランディングページ (LP)</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6">
+                        お客様に「つなげモン」シリーズの全体像や、解決できる課題をわかりやすく伝えるためのメインページです。
+                    </p>
+                    <div class="flex items-center text-orange-600 font-bold text-sm">
+                        ページを開く <i data-lucide="arrow-right"
+                            class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- bira.html カード -->
+            <a href="bira.html"
+                class="card-hover bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden group block">
+                <div
+                    class="h-32 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center relative">
+                    <div class="absolute inset-0 opacity-20"
+                        style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 16px 16px;">
+                    </div>
+                    <i data-lucide="file-image" class="w-16 h-16 text-white opacity-90 drop-shadow-md"></i>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 font-bold rounded-md text-xs">図解資料</span>
+                        <h3 class="text-2xl font-black text-slate-800 group-hover:text-blue-600 transition-colors">
+                            リッチ図解ビラ</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm font-medium leading-relaxed mb-6">
+                        各テーマ（Theme 01〜05）ごとのデータの流れやシステム構成を、視覚的なアニメーションや図解で詳しく解説したページです。
+                    </p>
+                    <div class="flex items-center text-blue-600 font-bold text-sm">
+                        ページを開く <i data-lucide="arrow-right"
+                            class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="text-center py-8 text-slate-500 text-sm font-medium">
+        <p>&copy; 2026 つなげモン 開発チーム</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
