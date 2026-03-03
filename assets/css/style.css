@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   共通スタイル (つなげモンシリーズ)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   LP 共通・ヒーロー
+   -------------------------------------------------------------------------- */
+.hero-pattern {
+    background-color: #f8fafc;
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #ea580c, #ef4444);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-card {
+    transition: all 0.3s ease;
+}
+
+.theme-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* --------------------------------------------------------------------------
+   リッチ図解 (bira.html等) 共通
+   -------------------------------------------------------------------------- */
+/* スライドの基本設定 */
+.slide-container {
+    aspect-ratio: 16 / 9;
+    max-height: 720px;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* パイプライン（線）のデザイン */
+.pipeline {
+    position: absolute;
+    top: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    z-index: 0;
+    opacity: 0.3;
+}
+
+/* 要素の浮遊感 */
+.floating-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   アニメーション
+   -------------------------------------------------------------------------- */
+/* アニメーション：データの流れ */
+@keyframes flow-right {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+}
+
+.animate-flow {
+    animation: flow-right 2s infinite ease-in-out;
+}
+
+/* アニメーション：つなげモンの鼓動 */
+@keyframes heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.4));
+    }
+
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.8));
+    }
+}
+
+.tsunagemon-core {
+    animation: heartbeat 3s infinite ease-in-out;
+}

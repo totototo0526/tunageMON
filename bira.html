@@ -8,78 +8,7 @@
     <title>「つなげモン」シリーズ リッチ図解</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        /* スライドの基本設定 */
-        .slide-container {
-            aspect-ratio: 16 / 9;
-            max-height: 720px;
-            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-            background-size: 24px 24px;
-            background-color: #ffffff;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* アニメーション：データの流れ */
-        @keyframes flow-right {
-            0% {
-                transform: translateX(-10px);
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateX(30px);
-                opacity: 0;
-            }
-        }
-
-        .animate-flow {
-            animation: flow-right 2s infinite ease-in-out;
-        }
-
-        /* アニメーション：つなげモンの鼓動 */
-        @keyframes heartbeat {
-
-            0%,
-            100% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.4));
-            }
-
-            50% {
-                transform: scale(1.05);
-                filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.8));
-            }
-        }
-
-        .tsunagemon-core {
-            animation: heartbeat 3s infinite ease-in-out;
-        }
-
-        /* パイプライン（線）のデザイン */
-        .pipeline {
-            position: absolute;
-            top: 50%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, currentColor, transparent);
-            z-index: 0;
-            opacity: 0.3;
-        }
-
-        /* 要素の浮遊感 */
-        .floating-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .floating-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="bg-slate-100 p-8 font-sans text-gray-800">
@@ -96,7 +25,7 @@
         <!-- ==========================================
              1. 取引先と「つなげモン」
         ========================================== -->
-        <div
+        <div data-theme-id="01"
             class="slide-container w-full rounded-3xl shadow-2xl border border-slate-200 p-12 flex flex-col justify-between group">
 
             <!-- ヘッダー部分 -->
@@ -105,17 +34,18 @@
                     <div class="flex items-center gap-3 mb-3">
                         <span class="px-4 py-1.5 bg-blue-100 text-blue-700 font-bold rounded-full text-sm">Theme
                             01</span>
-                        <h2 class="text-4xl font-black text-slate-800">つなげモン ポータル <span
+                        <h2 class="text-4xl font-black text-slate-800" data-theme-target="title">つなげモン ポータル <span
                                 class="text-2xl text-slate-400 font-bold">(仮)</span></h2>
                     </div>
-                    <p class="font-bold text-blue-600 mb-2 tracking-wide">〜 取引先と「つなげモン」 〜</p>
-                    <p class="text-xl text-slate-600 font-medium">顧客、協力会社、仕入先と<span
+                    <p class="font-bold text-blue-600 mb-2 tracking-wide" data-theme-target="subtitle">〜 取引先と「つなげモン」 〜
+                    </p>
+                    <p class="text-xl text-slate-600 font-medium" data-theme-target="description">顧客、協力会社、仕入先と<span
                             class="text-blue-600 font-bold border-b-2 border-blue-600">マイページ</span>を介してリアルタイムな情報をつなげます
                     </p>
                 </div>
                 <div class="bg-blue-50 p-4 rounded-xl text-right">
                     <p class="text-sm font-bold text-blue-800 mb-1">【解決する課題】</p>
-                    <p class="text-xs text-slate-600">電話・FAXでの受発注<br>転記ミス・納期確認の手間</p>
+                    <p class="text-xs text-slate-600" data-theme-target="problems">電話・FAXでの受発注<br>転記ミス・納期確認の手間</p>
                 </div>
             </div>
 
@@ -183,24 +113,25 @@
         <!-- ==========================================
              2. 問合せを「つなげモン」
         ========================================== -->
-        <div
+        <div data-theme-id="02"
             class="slide-container w-full rounded-3xl shadow-2xl border border-slate-200 p-12 flex flex-col justify-between group">
             <div class="relative z-10 flex justify-between items-start">
                 <div>
                     <div class="flex items-center gap-3 mb-3">
                         <span class="px-4 py-1.5 bg-green-100 text-green-700 font-bold rounded-full text-sm">Theme
                             02</span>
-                        <h2 class="text-4xl font-black text-slate-800">つなげモン 窓口 <span
+                        <h2 class="text-4xl font-black text-slate-800" data-theme-target="title">つなげモン 窓口 <span
                                 class="text-2xl text-slate-400 font-bold">(仮)</span></h2>
                     </div>
-                    <p class="font-bold text-green-600 mb-2 tracking-wide">〜 問合せを「つなげモン」 〜</p>
-                    <p class="text-xl text-slate-600 font-medium"><span
+                    <p class="font-bold text-green-600 mb-2 tracking-wide" data-theme-target="subtitle">〜 問合せを「つなげモン」 〜
+                    </p>
+                    <p class="text-xl text-slate-600 font-medium" data-theme-target="description"><span
                             class="text-green-600 font-bold border-b-2 border-green-600">eメール、LINE等、FAX</span>の情報を自社データベースへつなげます
                     </p>
                 </div>
                 <div class="bg-green-50 p-4 rounded-xl text-right">
                     <p class="text-sm font-bold text-green-800 mb-1">【解決する課題】</p>
-                    <p class="text-xs text-slate-600">バラバラな窓口からの入力漏れ<br>紙（FAX）の手動パンチ入力</p>
+                    <p class="text-xs text-slate-600" data-theme-target="problems">バラバラな窓口からの入力漏れ<br>紙（FAX）の手動パンチ入力</p>
                 </div>
             </div>
 
@@ -265,24 +196,25 @@
         <!-- ==========================================
              3. モバイルと「つなげモン」
         ========================================== -->
-        <div
+        <div data-theme-id="03"
             class="slide-container w-full rounded-3xl shadow-2xl border border-slate-200 p-12 flex flex-col justify-between group">
             <div class="relative z-10 flex justify-between items-start">
                 <div>
                     <div class="flex items-center gap-3 mb-3">
                         <span class="px-4 py-1.5 bg-yellow-100 text-yellow-700 font-bold rounded-full text-sm">Theme
                             03</span>
-                        <h2 class="text-4xl font-black text-slate-800">つなげモン モバイル <span
+                        <h2 class="text-4xl font-black text-slate-800" data-theme-target="title">つなげモン モバイル <span
                                 class="text-2xl text-slate-400 font-bold">(仮)</span></h2>
                     </div>
-                    <p class="font-bold text-yellow-600 mb-2 tracking-wide">〜 モバイルと「つなげモン」 〜</p>
-                    <p class="text-xl text-slate-600 font-medium">仕入・出荷・棚卸等で<span
+                    <p class="font-bold text-yellow-600 mb-2 tracking-wide" data-theme-target="subtitle">〜 モバイルと「つなげモン」
+                        〜</p>
+                    <p class="text-xl text-slate-600 font-medium" data-theme-target="description">仕入・出荷・棚卸等で<span
                             class="text-yellow-600 font-bold border-b-2 border-yellow-600">スマホやバーコードリーダ</span>を活用し、自社DBへつなげます
                     </p>
                 </div>
                 <div class="bg-yellow-50 p-4 rounded-xl text-right">
                     <p class="text-sm font-bold text-yellow-800 mb-1">【解決する課題】</p>
-                    <p class="text-xs text-slate-600">紙のチェックシート（野帳）<br>事務所に戻ってからの二度打ち</p>
+                    <p class="text-xs text-slate-600" data-theme-target="problems">紙のチェックシート（野帳）<br>事務所に戻ってからの二度打ち</p>
                 </div>
             </div>
 
@@ -340,23 +272,25 @@
         <!-- ==========================================
              4. 他システムと「つなげモン」
         ========================================== -->
-        <div
+        <div data-theme-id="04"
             class="slide-container w-full rounded-3xl shadow-2xl border border-slate-200 p-12 flex flex-col justify-between group">
             <div class="relative z-10 flex justify-between items-start">
                 <div>
                     <div class="flex items-center gap-3 mb-3">
                         <span class="px-4 py-1.5 bg-purple-100 text-purple-700 font-bold rounded-full text-sm">Theme
                             04</span>
-                        <h2 class="text-4xl font-black text-slate-800">つなげモン ハブ <span
+                        <h2 class="text-4xl font-black text-slate-800" data-theme-target="title">つなげモン ハブ <span
                                 class="text-2xl text-slate-400 font-bold">(仮)</span></h2>
                     </div>
-                    <p class="font-bold text-purple-600 mb-2 tracking-wide">〜 他システムと「つなげモン」 〜</p>
-                    <p class="text-xl text-slate-600 font-medium">SalesforceやKintone等の<span
+                    <p class="font-bold text-purple-600 mb-2 tracking-wide" data-theme-target="subtitle">〜 他システムと「つなげモン」
+                        〜</p>
+                    <p class="text-xl text-slate-600 font-medium" data-theme-target="description">
+                        SalesforceやKintone等の<span
                             class="text-purple-600 font-bold border-b-2 border-purple-600">他システム（SaaS等）</span>とつなげます</p>
                 </div>
                 <div class="bg-purple-50 p-4 rounded-xl text-right">
                     <p class="text-sm font-bold text-purple-800 mb-1">【解決する課題】</p>
-                    <p class="text-xs text-slate-600">部門ごとのシステムのサイロ化<br>顧客マスタなどの二重管理</p>
+                    <p class="text-xs text-slate-600" data-theme-target="problems">部門ごとのシステムのサイロ化<br>顧客マスタなどの二重管理</p>
                 </div>
             </div>
 
@@ -419,22 +353,23 @@
         <!-- ==========================================
              5. ハードと「つなげモン」
         ========================================== -->
-        <div
+        <div data-theme-id="05"
             class="slide-container w-full rounded-3xl shadow-2xl border border-slate-200 p-12 flex flex-col justify-between group">
             <div class="relative z-10 flex justify-between items-start">
                 <div>
                     <div class="flex items-center gap-3 mb-3">
                         <span class="px-4 py-1.5 bg-red-100 text-red-700 font-bold rounded-full text-sm">Theme 05</span>
-                        <h2 class="text-4xl font-black text-slate-800">つなげモン IoT <span
+                        <h2 class="text-4xl font-black text-slate-800" data-theme-target="title">つなげモン IoT <span
                                 class="text-2xl text-slate-400 font-bold">(仮)</span></h2>
                     </div>
-                    <p class="font-bold text-red-600 mb-2 tracking-wide">〜 ハードと「つなげモン」 〜</p>
-                    <p class="text-xl text-slate-600 font-medium">制御装置やセンサー等の<span
+                    <p class="font-bold text-red-600 mb-2 tracking-wide" data-theme-target="subtitle">〜 ハードと「つなげモン」 〜
+                    </p>
+                    <p class="text-xl text-slate-600 font-medium" data-theme-target="description">制御装置やセンサー等の<span
                             class="text-red-600 font-bold border-b-2 border-red-600">ハードウェア（IoT）</span>とつなげます</p>
                 </div>
                 <div class="bg-red-50 p-4 rounded-xl text-right">
                     <p class="text-sm font-bold text-red-800 mb-1">【解決する課題】</p>
-                    <p class="text-xs text-slate-600">機械稼働状況の目視確認<br>トラブル検知の遅れ</p>
+                    <p class="text-xs text-slate-600" data-theme-target="problems">機械稼働状況の目視確認<br>トラブル検知の遅れ</p>
                 </div>
             </div>
 
@@ -497,9 +432,7 @@
 
     </div>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

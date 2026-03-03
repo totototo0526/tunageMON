@@ -8,28 +8,7 @@
     <title>「つなげモン」サービスシリーズ | あらゆる分断をシームレスにつなぐ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .hero-pattern {
-            background-color: #f8fafc;
-            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-            background-size: 32px 32px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #ea580c, #ef4444);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .theme-card {
-            transition: all 0.3s ease;
-        }
-
-        .theme-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="font-sans text-slate-800 bg-white">
@@ -185,16 +164,18 @@
             <div class="space-y-12">
 
                 <!-- Theme 01 -->
-                <div
+                <div data-theme-id="01"
                     class="theme-card bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2">
                         <span
                             class="px-4 py-1.5 bg-blue-100 text-blue-700 font-bold rounded-full text-sm mb-4 inline-block">Theme
                             01</span>
-                        <h3 class="text-3xl font-black text-slate-800 mb-1">つなげモン ポータル <span
+                        <h3 class="text-3xl font-black text-slate-800 mb-1" data-theme-target="title">つなげモン ポータル <span
                                 class="text-xl text-slate-400 font-bold">(仮)</span></h3>
-                        <p class="font-bold text-blue-600 mb-4 tracking-wide">〜 取引先と「つなげモン」 〜</p>
-                        <p class="text-slate-600 mb-6 font-medium leading-relaxed">顧客、協力会社、仕入先と<span
+                        <p class="font-bold text-blue-600 mb-4 tracking-wide" data-theme-target="subtitle">〜 取引先と「つなげモン」
+                            〜</p>
+                        <p class="text-slate-600 mb-6 font-medium leading-relaxed" data-theme-target="description">
+                            顧客、協力会社、仕入先と<span
                                 class="text-blue-600 font-bold">BtoBマイページ</span>を介してリアルタイムな情報をつなげます。電話やFAXでの受発注をデジタル化し、転記ミスを撲滅します。
                         </p>
                         <ul class="space-y-2 text-sm font-bold text-slate-700">
@@ -222,16 +203,17 @@
                 </div>
 
                 <!-- Theme 02 -->
-                <div
+                <div data-theme-id="02"
                     class="theme-card bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10 flex flex-col md:flex-row-reverse gap-8 items-center">
                     <div class="md:w-1/2">
                         <span
                             class="px-4 py-1.5 bg-green-100 text-green-700 font-bold rounded-full text-sm mb-4 inline-block">Theme
                             02</span>
-                        <h3 class="text-3xl font-black text-slate-800 mb-1">つなげモン 窓口 <span
+                        <h3 class="text-3xl font-black text-slate-800 mb-1" data-theme-target="title">つなげモン 窓口 <span
                                 class="text-xl text-slate-400 font-bold">(仮)</span></h3>
-                        <p class="font-bold text-green-600 mb-4 tracking-wide">〜 問合せを「つなげモン」 〜</p>
-                        <p class="text-slate-600 mb-6 font-medium leading-relaxed"><span
+                        <p class="font-bold text-green-600 mb-4 tracking-wide" data-theme-target="subtitle">〜
+                            問合せを「つなげモン」 〜</p>
+                        <p class="text-slate-600 mb-6 font-medium leading-relaxed" data-theme-target="description"><span
                                 class="text-green-600 font-bold">eメール、LINE等、FAX</span>の情報を自社データベースへつなげます。バラバラな窓口からの連絡を一元管理し、FAXのOCR処理による自動データ化も実現します。
                         </p>
                         <ul class="space-y-2 text-sm font-bold text-slate-700">
@@ -273,16 +255,18 @@
                 </div>
 
                 <!-- Theme 03 -->
-                <div
+                <div data-theme-id="03"
                     class="theme-card bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2">
                         <span
                             class="px-4 py-1.5 bg-yellow-100 text-yellow-700 font-bold rounded-full text-sm mb-4 inline-block">Theme
                             03</span>
-                        <h3 class="text-3xl font-black text-slate-800 mb-1">つなげモン モバイル <span
+                        <h3 class="text-3xl font-black text-slate-800 mb-1" data-theme-target="title">つなげモン モバイル <span
                                 class="text-xl text-slate-400 font-bold">(仮)</span></h3>
-                        <p class="font-bold text-yellow-600 mb-4 tracking-wide">〜 モバイルと「つなげモン」 〜</p>
-                        <p class="text-slate-600 mb-6 font-medium leading-relaxed">仕入・出荷・棚卸等において<span
+                        <p class="font-bold text-yellow-600 mb-4 tracking-wide" data-theme-target="subtitle">〜
+                            モバイルと「つなげモン」 〜</p>
+                        <p class="text-slate-600 mb-6 font-medium leading-relaxed" data-theme-target="description">
+                            仕入・出荷・棚卸等において<span
                                 class="text-yellow-600 font-bold">スマホやバーコードリーダ</span>を活用し、自社データベースへつなげます。紙の野帳を廃止し、現場から直接リアルタイム在庫更新を可能にします。
                         </p>
                         <ul class="space-y-2 text-sm font-bold text-slate-700">
@@ -314,16 +298,18 @@
                 </div>
 
                 <!-- Theme 04 -->
-                <div
+                <div data-theme-id="04"
                     class="theme-card bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10 flex flex-col md:flex-row-reverse gap-8 items-center">
                     <div class="md:w-1/2">
                         <span
                             class="px-4 py-1.5 bg-purple-100 text-purple-700 font-bold rounded-full text-sm mb-4 inline-block">Theme
                             04</span>
-                        <h3 class="text-3xl font-black text-slate-800 mb-1">つなげモン ハブ <span
+                        <h3 class="text-3xl font-black text-slate-800 mb-1" data-theme-target="title">つなげモン ハブ <span
                                 class="text-xl text-slate-400 font-bold">(仮)</span></h3>
-                        <p class="font-bold text-purple-600 mb-4 tracking-wide">〜 他システムと「つなげモン」 〜</p>
-                        <p class="text-slate-600 mb-6 font-medium leading-relaxed">SalesforceやKintone等の<span
+                        <p class="font-bold text-purple-600 mb-4 tracking-wide" data-theme-target="subtitle">〜
+                            他システムと「つなげモン」 〜</p>
+                        <p class="text-slate-600 mb-6 font-medium leading-relaxed" data-theme-target="description">
+                            SalesforceやKintone等の<span
                                 class="text-purple-600 font-bold">他システム（SaaS）</span>とつなげます。部門ごとに分断されたシステムの「データの孤島」を解消し、基幹システムとのAPI連携でマスタを同期します。
                         </p>
                         <ul class="space-y-2 text-sm font-bold text-slate-700">
@@ -364,16 +350,18 @@
                 </div>
 
                 <!-- Theme 05 -->
-                <div
+                <div data-theme-id="05"
                     class="theme-card bg-white rounded-3xl shadow-xl border border-slate-200 p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center">
                     <div class="md:w-1/2">
                         <span
                             class="px-4 py-1.5 bg-red-100 text-red-700 font-bold rounded-full text-sm mb-4 inline-block">Theme
                             05</span>
-                        <h3 class="text-3xl font-black text-slate-800 mb-1">つなげモン IoT <span
+                        <h3 class="text-3xl font-black text-slate-800 mb-1" data-theme-target="title">つなげモン IoT <span
                                 class="text-xl text-slate-400 font-bold">(仮)</span></h3>
-                        <p class="font-bold text-red-600 mb-4 tracking-wide">〜 ハードと「つなげモン」 〜</p>
-                        <p class="text-slate-600 mb-6 font-medium leading-relaxed">制御装置やセンサー等の<span
+                        <p class="font-bold text-red-600 mb-4 tracking-wide" data-theme-target="subtitle">〜 ハードと「つなげモン」
+                            〜</p>
+                        <p class="text-slate-600 mb-6 font-medium leading-relaxed" data-theme-target="description">
+                            制御装置やセンサー等の<span
                                 class="text-red-600 font-bold">ハードウェア（IoT）</span>とつなげます。工場の機械の稼働ログや異常データを自動で収集し、目視確認なしに現場を可視化します。
                         </p>
                         <ul class="space-y-2 text-sm font-bold text-slate-700">
@@ -451,10 +439,7 @@
         </div>
     </footer>
 
-    <script>
-        // アイコンの初期化
-        lucide.createIcons();
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
